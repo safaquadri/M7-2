@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.cs2340.team6.totallyratticalapp.CreateRatReport"
-    tools:showIn="@layout/activity_create_rat_report">
+    tools:context="com.cs2340.team6.totallyratticalapp.newRatReport"
+    tools:showIn="@layout/activity_new_rat_report">
 
     <Spinner
         android:id="@+id/locationTypeSpinner"
@@ -16,7 +16,7 @@
         tools:layout_editor_absoluteY="160dp" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/et_Address"
         android:layout_width="207dp"
         android:layout_height="41dp"
         android:ems="10"
@@ -26,10 +26,10 @@
         tools:layout_editor_absoluteY="395dp" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/tvSelectBorough"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Select a borough:"
+        android:text="Select a borough"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="127dp" />
 
@@ -38,36 +38,36 @@
         android:layout_width="286dp"
         android:layout_height="28dp"
         tools:layout_editor_absoluteX="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView10"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        tools:layout_editor_absoluteY="241dp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/createRatReportButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Create"
         android:layout_marginStart="34dp"
+        android:text="Create"
         app:layout_constraintVertical_chainStyle="spread"
         tools:layout_editor_absoluteX="86dp"
         tools:layout_editor_absoluteY="447dp" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/cancelRatReportButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cancel"
-        android:onClick="onCancelReportPressed"
         android:layout_marginStart="24dp"
-        tools:layout_editor_absoluteY="447dp"
-        tools:layout_editor_absoluteX="214dp" />
+        android:onClick="onCancelReportPressed"
+        android:text="Cancel"
+        tools:layout_editor_absoluteX="214dp"
+        tools:layout_editor_absoluteY="447dp" />
 
-    <TextView
-        android:id="@+id/textView10"
+    <EditText
+        android:id="@+id/etDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Click 'Create' to make your rat report!"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Date"
         tools:layout_editor_absoluteX="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner2" />
+        tools:layout_editor_absoluteY="16dp" />
 
 </android.support.constraint.ConstraintLayout>

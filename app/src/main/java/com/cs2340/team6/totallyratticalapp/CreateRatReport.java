@@ -18,11 +18,10 @@ public class CreateRatReport extends AppCompatActivity implements AdapterView.On
     private String selected;
 
     private List<String> locationType;
-
     private List<String> borough;
 
-    private Spinner majorSpinner;
-    private Spinner spinner22;
+    private Spinner locationSpinner;
+    private Spinner boroughSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,16 +47,16 @@ public class CreateRatReport extends AppCompatActivity implements AdapterView.On
                 "Staten Island", "Queens",
                 "Brooklyn", "Bronx");
 
-        majorSpinner = (Spinner) findViewById(R.id.spinner);
-        spinner22 = (Spinner) findViewById(R.id.spinner2);
+        locationSpinner = (Spinner) findViewById(R.id.locationTypeSpinner);
+        boroughSpinner = (Spinner) findViewById(R.id.boroughSpinner);
 
         ArrayAdapter<String> adapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item, locationType);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        majorSpinner.setAdapter(adapter);
+        locationSpinner.setAdapter(adapter);
 
         ArrayAdapter<String> adapter2 = new ArrayAdapter(this,android.R.layout.simple_spinner_item, borough);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner22.setAdapter(adapter2);
+        boroughSpinner.setAdapter(adapter2);
     }
 
     @Override
