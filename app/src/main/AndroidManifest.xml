@@ -29,10 +29,6 @@
             android:name=".CreateRatReport"
             android:label="@string/title_activity_create_rat_report"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".newRatReport"
-            android:label="@string/title_activity_new_rat_report"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

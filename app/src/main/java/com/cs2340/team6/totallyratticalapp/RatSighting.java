@@ -33,6 +33,19 @@ public class RatSighting {
         longitude = split[split.length-2];
     }
 
+    public RatSighting(String date, String locType, String zip, String address, String city, String borough, String lat, String lon) {
+        key = "1";
+        createdDate = date;
+        locationType = locType;
+        incidentZip = zip;
+        incidentAddress = address;
+        this.city = city;
+        this.borough = borough;
+        latitude = lat;
+        longitude = lon;
+
+    }
+
     /**
      * Returns formatted list of information to display on Information screen
      *

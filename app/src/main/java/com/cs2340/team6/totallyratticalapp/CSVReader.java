@@ -33,6 +33,10 @@ public class CSVReader {
         return reports;
     }
 
+    public static void addSighting(RatSighting rat) {
+        reports.add(0, rat);
+    }
+
     /**
      * This method takes in the file's input
      * and splits it up into an array of strings (around commas)

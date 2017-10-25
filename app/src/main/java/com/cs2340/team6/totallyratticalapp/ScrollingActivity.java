@@ -56,4 +56,10 @@ public class ScrollingActivity extends ListActivity {
         });
 
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, AppActivity.class);
+        startActivity(intent);
+    }
 }

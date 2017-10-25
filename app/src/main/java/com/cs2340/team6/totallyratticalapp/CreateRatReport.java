@@ -9,8 +9,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 public class CreateRatReport extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
@@ -22,22 +28,18 @@ public class CreateRatReport extends AppCompatActivity implements AdapterView.On
 
     private Spinner locationSpinner;
     private Spinner boroughSpinner;
+    private TextView text;
+
+    private EditText zip;
+    private EditText address;
+    private EditText city;
+    private EditText latitude;
+    private EditText longitude;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_rat_report);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         locationType = Arrays.asList("1-2 Family Dwelling",
                 "3+ Family Apartment Building", "3+ Family Mixed Use Building",
@@ -46,6 +48,11 @@ public class CreateRatReport extends AppCompatActivity implements AdapterView.On
         borough = Arrays.asList("Manhattan",
                 "Staten Island", "Queens",
                 "Brooklyn", "Bronx");
+        zip = (EditText) findViewById(R.id.zip);
+        address = (EditText) findViewById(R.id.address);
+        city = (EditText) findViewById(R.id.city);
+        latitude = (EditText) findViewById(R.id.latitude);
+        longitude = (EditText) findViewById(R.id.longitude);
 
         locationSpinner = (Spinner) findViewById(R.id.locationTypeSpinner);
         boroughSpinner = (Spinner) findViewById(R.id.boroughSpinner);
@@ -59,10 +66,18 @@ public class CreateRatReport extends AppCompatActivity implements AdapterView.On
         boroughSpinner.setAdapter(adapter2);
     }
 
+    public void onCreatePressed(View v) {
+        String date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+        CSVReader.addSighting(new RatSighting(date, locationSpinner.getSelectedItem().toString(), zip.getText().toString(), address.getText().toString(), city.getText().toString(), boroughSpinner.getSelectedItem().toString(), latitude.getText().toString(), longitude.getText().toString()));
+        Intent intent = new Intent(this, ScrollingActivity.class);
+        startActivity(intent);
+    }
+
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
         selected = parent.getItemAtPosition(position).toString();
+
     }
 
     @Override
