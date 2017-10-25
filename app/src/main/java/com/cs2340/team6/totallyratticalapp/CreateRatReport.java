@@ -66,6 +66,11 @@ public class CreateRatReport extends AppCompatActivity implements AdapterView.On
         boroughSpinner.setAdapter(adapter2);
     }
 
+    /**
+     * Called when create button is pressed, creates a new Rat Report with data from fields
+     *
+     * @param v a view
+     */
     public void onCreatePressed(View v) {
         String date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
         CSVReader.addSighting(new RatSighting(date, locationSpinner.getSelectedItem().toString(), zip.getText().toString(), address.getText().toString(), city.getText().toString(), boroughSpinner.getSelectedItem().toString(), latitude.getText().toString(), longitude.getText().toString()));

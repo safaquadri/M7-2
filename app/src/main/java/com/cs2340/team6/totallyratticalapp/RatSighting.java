@@ -33,6 +33,18 @@ public class RatSighting {
         longitude = split[split.length-2];
     }
 
+    /**
+     * Creates new RatSighting object with given info, and key 1
+     *
+     * @param date the date of sighting
+     * @param locType the type of location
+     * @param zip The zip code of sighting
+     * @param address The address of sighting
+     * @param city the city of sighting
+     * @param borough the borough of sighting
+     * @param lat the latitude of sighting
+     * @param lon the longitude of sighting
+     */
     public RatSighting(String date, String locType, String zip, String address, String city, String borough, String lat, String lon) {
         key = "1";
         createdDate = date;

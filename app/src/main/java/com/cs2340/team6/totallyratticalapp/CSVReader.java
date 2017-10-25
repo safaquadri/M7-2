@@ -33,6 +33,11 @@ public class CSVReader {
         return reports;
     }
 
+    /**
+     * Adds new sighting to front of List, so it shows up first
+     *
+     * @param rat The rat to be added
+     */
     public static void addSighting(RatSighting rat) {
         reports.add(0, rat);
     }

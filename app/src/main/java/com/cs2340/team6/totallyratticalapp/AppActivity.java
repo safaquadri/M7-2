@@ -62,6 +62,7 @@ public class AppActivity extends AppCompatActivity {
 
     /**
      * This is called when the make a rat report button is clicked
+     * Moves to CreateRatReport activity
      *
      * @param v View
      *
