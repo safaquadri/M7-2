@@ -1,5 +1,6 @@
 package com.cs2340.team6.totallyratticalapp;
 
+import java.util.Random;
 /**
  * Created by dylan on 10/14/2017.
  */
@@ -33,8 +34,35 @@ public class RatSighting {
         longitude = split[split.length-2];
     }
 
+    /**
+     * Creates new RatSighting object with given info, and key 1
+     *
+     * @param date the date of sighting
+     * @param locType the type of location
+     * @param zip The zip code of sighting
+     * @param address The address of sighting
+     * @param city the city of sighting
+     * @param borough the borough of sighting
+     * @param lat the latitude of sighting
+     * @param lon the longitude of sighting
+     */
     public RatSighting(String date, String locType, String zip, String address, String city, String borough, String lat, String lon) {
-        key = "1";
+        Random rand = new Random();
+
+        key = String.valueOf(rand.nextInt(100000000));
+        createdDate = date;
+        locationType = locType;
+        incidentZip = zip;
+        incidentAddress = address;
+        this.city = city;
+        this.borough = borough;
+        latitude = lat;
+        longitude = lon;
+
+    }
+
+    public RatSighting(String key, String date, String locType, String zip, String address, String city, String borough, String lat, String lon) {
+        this.key = key;
         createdDate = date;
         locationType = locType;
         incidentZip = zip;
@@ -70,5 +98,42 @@ public class RatSighting {
      */
     public String toString() {
         return locationType + "  " + createdDate + "  " + incidentAddress;
+    }
+
+    /**
+     * returns string to be written to csv file for storage
+     *
+     * @return string for this
+     */
+    public String writeableString() {
+        return key+ "," + createdDate + "," + locationType + "," + incidentZip + "," + incidentAddress + "," + city + "," + borough + "," + latitude + "," + longitude + "\n";
+    }
+
+    /**
+     * getter for latitude
+     *
+     * @return latitude
+     */
+    public String getLatitude() {
+        return latitude;
+    }
+
+    /**
+     * getter for longitude
+     *
+     * @return longitude
+     */
+    public String getLongitude() {
+        return longitude;
+    }
+
+    /**
+     * getter for date, takes date, separates out time if needed, and returns
+     *
+     * @return date formatted like MM/dd/yyyy
+     */
+    public String getDate() {
+        if (createdDate.length() > 0)return createdDate.split(" ")[0];
+        return null;
     }
 }

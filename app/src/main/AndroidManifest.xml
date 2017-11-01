@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cs2340.team6.totallyratticalapp">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -29,6 +34,13 @@
             android:name=".CreateRatReport"
             android:label="@string/title_activity_create_rat_report"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".MapsActivity" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity android:name=".SetDateActivity"></activity>
     </application>
 
 </manifest>

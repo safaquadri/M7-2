@@ -61,15 +61,15 @@ public class RegisterActivity extends AppCompatActivity {
     public void onRegisterPressed(View view){
         if (etName.getText().toString().equals("") || etUsername.getText().toString().equals("")
                 || etPassword.getText().toString().equals("") ||
-                !LoginActivity.usernameAvailable(etUsername.getText().toString())) {
+                !CSVReader.usernameAvailable(etUsername.getText().toString())) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage("One or more fields empty or username is taken. Try again.");
             AlertDialog dialogue = builder.create();
             dialogue.show();
         }
         else {
-            LoginActivity.addUser(new User (etName.getText().toString(), etUsername.getText().toString(),
-                    etPassword.getText().toString(), (User.Role) roleSpinner.getSelectedItem()));
+            CSVReader.addUser(new User (etName.getText().toString(), etUsername.getText().toString(),
+                    etPassword.getText().toString(), (User.Role) roleSpinner.getSelectedItem()), this);
 
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);

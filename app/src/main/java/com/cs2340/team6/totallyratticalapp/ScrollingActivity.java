@@ -37,6 +37,14 @@ public class ScrollingActivity extends ListActivity {
 
     public static RatSighting getSelectedRat() {return selectedRat;}
 
+    /**
+     * Sets the selected rat
+     *
+     * @param r rat that should be selected
+     */
+    public static void setSelectedRat(RatSighting r) {
+        selectedRat = r;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

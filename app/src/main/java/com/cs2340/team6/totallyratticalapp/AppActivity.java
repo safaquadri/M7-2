@@ -62,12 +62,25 @@ public class AppActivity extends AppCompatActivity {
 
     /**
      * This is called when the make a rat report button is clicked
+     * Moves to CreateRatReport activity
      *
      * @param v View
      *
      */
     public void onMakeReportPressed(View v) {
         Intent intent = new Intent(this, CreateRatReport.class);
+        startActivity(intent);
+    }
+
+    /**
+     * This is called when the make a rat report button is clicked
+     * Moves to Rat map activity
+     *
+     * @param v View
+     *
+     */
+    public void onRatMapPressed(View v) {
+        Intent intent = new Intent(this, MapsActivity.class);
         startActivity(intent);
     }
 
@@ -80,5 +93,15 @@ public class AppActivity extends AppCompatActivity {
      */
     public static void setCurrentUser(User user) {
         currentUser = user;
+    }
+
+    /**
+     * Called when set dates button is pressed, starts activity to select dates
+     *
+     * @param v view
+     */
+    public void onSetDatePressed(View v) {
+        Intent intent = new Intent(this, SetDateActivity.class);
+        startActivity(intent);
     }
 }

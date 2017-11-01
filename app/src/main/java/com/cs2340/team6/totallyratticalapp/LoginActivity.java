@@ -24,7 +24,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText etPassword;
     private EditText etUsername;
-    private static ArrayList<User> users = new ArrayList<User>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,8 +70,8 @@ public class LoginActivity extends AppCompatActivity {
      * @param v A View
      */
     public void onLoginPressed(View v) {
-        if (LoginActivity.userExists(etUsername.getText().toString(), etPassword.getText().toString())) {
-            AppActivity.setCurrentUser(findUser(etUsername.getText().toString()));
+        if (CSVReader.userExists(etUsername.getText().toString(), etPassword.getText().toString())) {
+            AppActivity.setCurrentUser(CSVReader.findUser(etUsername.getText().toString()));
             Intent intent = new Intent(this, AppActivity.class);
             startActivity(intent);
         }
@@ -88,70 +88,5 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    /**
-     * Adds a new user to the User ArrayList which functions as a user database
-     * for this application.
-     *
-     * @param user The User to be added
-     */
-    public static void addUser (User user) {
-        users.add(user);
-    }
 
-
-    /**
-     * Checks if a user exists with this username and password
-     *
-     * @param username the username to check
-     * @param password the password to check
-     * @return true if such a user exists, false else
-     */
-    public static boolean userExists (String username, String password) {
-        for (User u : users) {
-            if (u.getUsername().equals(username) && u.getPassword().equals(password)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    /**
-     * Checks if username is already taken
-     *
-     * @param username the username to check
-     * @return false if taken, true otherwise
-     */
-    public static boolean usernameAvailable(String username) {
-        for (User u : users) {
-            if (u.getUsername().equals(username)) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    /**
-     * Returns the User ArrayList which functions as a database of users for this
-     * application
-     *
-     * @return the aforementioned ArrayList
-     */
-    public static ArrayList<User> getUsers() {
-        return users;
-    }
-
-    /**
-     * Finds the user with the given username
-     *
-     * @param username the username to check
-     * @return the unique User object with that name or null if it doesn't exist
-     */
-    private User findUser (String username) {
-        for (User u : users) {
-            if (u.getUsername().equals(username)) {
-                return u;
-            }
-        }
-        return null;
-    }
 }

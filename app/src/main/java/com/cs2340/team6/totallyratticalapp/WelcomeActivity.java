@@ -25,7 +25,8 @@ public class WelcomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_welcome);
 
         InputStream file = getResources().openRawResource(R.raw.rat_sightings);
-        CSVReader.parseFile(file);
+        CSVReader.parseFile(file, this);
+        CSVReader.readUserInfo(this);
     }
 
     /**
