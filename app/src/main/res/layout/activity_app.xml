@@ -32,12 +32,12 @@
         android:id="@+id/rat_feed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="115dp"
+        android:onClick="onViewDataPressed"
         android:text="Rat Feed"
-        app:layout_constraintTop_toBottomOf="@+id/WelcomeText"
         app:layout_constraintLeft_toRightOf="@+id/WelcomeText"
         app:layout_constraintRight_toLeftOf="@+id/WelcomeText"
-        android:layout_marginTop="140dp"
-        android:onClick="onViewDataPressed"/>
+        app:layout_constraintTop_toBottomOf="@+id/WelcomeText" />
 
     <Button
         android:id="@+id/button3"
@@ -49,7 +49,8 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/LogoutButton"
         app:layout_constraintTop_toBottomOf="@+id/rat_feed"
-        app:layout_constraintHorizontal_bias="0.502" />
+        app:layout_constraintHorizontal_bias="0.502"
+        android:layout_marginBottom="26dp" />
 
     <Button
         android:id="@+id/button4"
@@ -60,7 +61,9 @@
         app:layout_constraintTop_toBottomOf="@+id/WelcomeText"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:onClick="onRatMapPressed" />
+        android:onClick="onRatMapPressed"
+        app:layout_constraintHorizontal_bias="0.354"
+        app:layout_constraintVertical_bias="0.494" />
     <Button
         android:id="@+id/button5"
         android:layout_width="wrap_content"
@@ -69,6 +72,8 @@
         app:layout_constraintBottom_toTopOf="@+id/rat_feed"
         app:layout_constraintTop_toBottomOf="@+id/WelcomeText"
         app:layout_constraintLeft_toRightOf="@+id/button4"
-        android:onClick="onSetDatePressed" />
+        android:onClick="onSetDatePressed"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintVertical_bias="0.484" />
 
 </android.support.constraint.ConstraintLayout>

@@ -60,8 +60,18 @@
         android:layout_marginTop="80dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:id="@+id/setDate"
-        android:text="Set Dates"
-        android:onClick="onSetDatePressed"/>
+        android:id="@+id/goToMap"
+        android:text="Go to Map"
+        android:onClick="onGoToMapPressed"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="parent"
+        android:layout_marginTop="120dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/goToChart"
+        android:text="Go to Chart"
+        android:onClick="onGoToChartPressed"/>
 
 </android.support.constraint.ConstraintLayout>

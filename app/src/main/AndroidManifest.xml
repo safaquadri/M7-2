@@ -35,6 +35,7 @@
             android:label="@string/title_activity_create_rat_report"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MapsActivity" />
+        <activity android:name=".ChartActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

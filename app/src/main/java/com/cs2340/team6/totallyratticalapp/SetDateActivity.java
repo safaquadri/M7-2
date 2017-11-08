@@ -71,7 +71,7 @@ public class SetDateActivity extends AppCompatActivity {
      *
      * @param view a View
      */
-    public void onSetDatePressed(View view) {
+    public void onGoToMapPressed(View view) {
         dates = new int[6];
         dates[0] = (Integer)stDaySpinner.getSelectedItem();
         dates[1] = (Integer)stMonthSpinner.getSelectedItem();
@@ -80,6 +80,18 @@ public class SetDateActivity extends AppCompatActivity {
         dates[4] = (Integer)eMonthSpinner.getSelectedItem();
         dates[5] = (Integer)eYearSpinner.getSelectedItem();
         Intent intent = new Intent(this, MapsActivity.class);
+        startActivity(intent);
+    }
+
+    public void onGoToChartPressed(View view) {
+        dates = new int[6];
+        dates[0] = (Integer)stDaySpinner.getSelectedItem();
+        dates[1] = (Integer)stMonthSpinner.getSelectedItem();
+        dates[2] = (Integer)stYearSpinner.getSelectedItem();
+        dates[3] = (Integer)eDaySpinner.getSelectedItem();
+        dates[4] = (Integer)eMonthSpinner.getSelectedItem();
+        dates[5] = (Integer)eYearSpinner.getSelectedItem();
+        Intent intent = new Intent(this, ChartActivity.class);
         startActivity(intent);
     }
 
