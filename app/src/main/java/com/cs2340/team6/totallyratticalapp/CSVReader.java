@@ -39,7 +39,10 @@ public class CSVReader {
         return reports;
     }
 
+    public static void addDummyUser(User user) {
+        users.add(user);
 
+    }
 
     /**
      * Adds new sighting to front of List, so it shows up first
